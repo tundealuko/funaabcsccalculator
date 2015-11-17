@@ -9,7 +9,8 @@
 </h:head>
 
 <h:body>
-	
+	<h1>FUNAAB COMPOSITE SCORE CALCULATOR</h1>
+		
 	<h:form>
 		<p:messages id="messages" />
 
@@ -17,7 +18,7 @@
 		<p:panelGrid columns="2">
 
 			<p:outputLabel for="jambScore" value="JAMB UTME Score" />
-			<p:inputText id="jambScore" value="#{student.jambScore}"
+			<p:inputText id="jambScore" value="#{studentBean.jambScore}"
 				placeholder="Enter Your UTME Score" required="true"
 				Label="JAMB UTME Score">
 				<f:validateLongRange mininmum="1" maximum="400" />
@@ -25,7 +26,7 @@
 			</p:inputText>
 
 			<p:outputLabel for="postUtme" value="Post UTME Score" />
-			<p:inputText id="postUtme" value="#{student.postUtme}"
+			<p:inputText id="postUtme" value="#{studentBean.postUtme}"
 				placeholder="Enter Your Post UTME Score" required="true"
 				Label="JAMB UTME Score">
 				<f:validateLongRange mininmum="1" maximum="100" />
@@ -33,7 +34,7 @@
 			</p:inputText>
 
 			<p:outputLabel for="englishGrade" value="English O'Level Grade" />
-			<p:selectOneMenu id="englishGrade" value="#{student.englishGrade}">
+			<p:selectOneMenu id="englishGrade" value="#{studentBean.englishGrade}">
 				<f:selectItem itemValue="6" itemLabel="A1" />
 				<f:selectItem itemValue="5" itemLabel="B2" />
 				<f:selectItem itemValue="4" itemLabel="B3" />
@@ -45,7 +46,7 @@
 
 
 			<p:outputLabel for="mathsGrade" value="Mathematics O'Level Grade" />
-			<p:selectOneMenu id="mathsGrade" value="#{student.mathsGrade}">
+			<p:selectOneMenu id="mathsGrade" value="#{studentBean.mathsGrade}">
 				<f:selectItem itemValue="6" itemLabel="A1" />
 				<f:selectItem itemValue="5" itemLabel="B2" />
 				<f:selectItem itemValue="4" itemLabel="B3" />
@@ -59,7 +60,7 @@
 			<p:outputLabel for="phyGeoGovGrade"
 				value="Physics/Geography/Goverment O'Level Grade" />
 			<p:selectOneMenu id="phyGeoGovGrade"
-				value="#{student.phyGeoGovGrade}">
+				value="#{studentBean.phyGeoGovGrade}">
 				<f:selectItem itemValue="6" itemLabel="A1" />
 				<f:selectItem itemValue="5" itemLabel="B2" />
 				<f:selectItem itemValue="4" itemLabel="B3" />
@@ -73,7 +74,7 @@
 			<p:outputLabel for="chemAcctCommGrade"
 				value="Chemistry/Account/Commerce O'Level Grade" />
 			<p:selectOneMenu id="chemAcctCommGrade"
-				value="#{student.chemAcctCommGrade}">
+				value="#{studentBean.chemAcctCommGrade}">
 				<f:selectItem itemValue="6" itemLabel="A1" />
 				<f:selectItem itemValue="5" itemLabel="B2" />
 				<f:selectItem itemValue="4" itemLabel="B3" />
@@ -86,7 +87,7 @@
 
 			<p:outputLabel for="bioAgrEconGrade" value="Biology/Agric/Economics" />
 			<p:selectOneMenu id="bioAgrEconGrade"
-				value="#{student.bioAgrEconGrade}">
+				value="#{studentBean.bioAgrEconGrade}">
 				<f:selectItem itemValue="6" itemLabel="A1" />
 				<f:selectItem itemValue="5" itemLabel="B2" />
 				<f:selectItem itemValue="4" itemLabel="B3" />
@@ -96,16 +97,11 @@
 
 			</p:selectOneMenu>
 
-
-
-			
-			<h:commandButton value="Get Composite Score" action="myresponse" />
-			<h:link></h:link>
-	
+			<h:commandButton value="Get Composite Score" action="#{studentBean.calculation}" />
+			<h:outputText id="compositeScore" value="#{studentBean.compositeScore}"/>
 		</p:panelGrid>
 		
 	</h:form>
-	 
-
-</h:body>
+	This webapp is created and developed by <p:button href="http://twitter.com/aluck101" value="Tunde Aluko" />
+ </h:body>
 </html>
